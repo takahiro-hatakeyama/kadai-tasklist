@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
@@ -47,7 +48,7 @@ public class UpdateServlet extends HttpServlet {
             em.getTransaction().commit();
             em.close();
 
-            request.getSession().removeAttribute("message_id");
+            request.getSession().removeAttribute("tasks_id");
 
             response.sendRedirect(request.getContextPath() + "/index");
         }
